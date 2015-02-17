@@ -1,0 +1,1803 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+
+    <link rel="stylesheet" href="ink.css"> <!-- For testing only -->
+
+    <style type="text/css">
+
+      /**********************************************
+      * Ink v1.0.5 - Copyright 2013 ZURB Inc        *
+      **********************************************/
+
+      /* Client-specific Styles & Reset */
+
+      #outlook a {
+        padding:0;
+      }
+
+      body{
+        width:100% !important;
+        min-width: 100%;
+        -webkit-text-size-adjust:100%;
+        -ms-text-size-adjust:100%;
+        margin:0;
+        padding:0;
+      }
+
+      .ExternalClass {
+        width:100%;
+      }
+
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      #backgroundTable {
+        margin:0;
+        padding:0;
+        width:100% !important;
+        line-height: 100% !important;
+      }
+
+      img {
+        outline:none;
+        text-decoration:none;
+        -ms-interpolation-mode: bicubic;
+        width: auto;
+        max-width: 100%;
+        float: left;
+        clear: both;
+        display: block;
+      }
+
+      center {
+        width: 100%;
+        min-width: 580px;
+      }
+
+      a img {
+        border: none;
+      }
+
+      p {
+        margin: 0 0 0 10px;
+      }
+
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+
+      td {
+        border-collapse: collapse !important;
+      }
+
+      table, tr, td {
+        padding: 0;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      hr {
+        color: #d9d9d9;
+        background-color: #d9d9d9;
+        height: 1px;
+        border: none;
+      }
+
+      /* Responsive Grid */
+
+      table.body {
+        height: 100%;
+        width: 100%;
+      }
+
+      table.container {
+        width: 580px;
+        margin: 0 auto;
+        text-align: inherit;
+      }
+
+      table.row {
+        padding: 0px;
+        width: 100%;
+        position: relative;
+      }
+
+      table.container table.row {
+        display: block;
+      }
+
+      td.wrapper {
+        padding: 10px 20px 0px 0px;
+        position: relative;
+      }
+
+      table.columns,
+      table.column {
+        margin: 0 auto;
+      }
+
+      table.columns td,
+      table.column td {
+        padding: 0px 0px 10px;
+      }
+
+      table.columns td.sub-columns,
+      table.column td.sub-columns,
+      table.columns td.sub-column,
+      table.column td.sub-column {
+        padding-right: 10px;
+      }
+
+      td.sub-column, td.sub-columns {
+        min-width: 0px;
+      }
+
+      table.row td.last,
+      table.container td.last {
+        padding-right: 0px;
+      }
+
+      table.one { width: 30px; }
+      table.two { width: 80px; }
+      table.three { width: 130px; }
+      table.four { width: 180px; }
+      table.five { width: 230px; }
+      table.six { width: 280px; }
+      table.seven { width: 330px; }
+      table.eight { width: 380px; }
+      table.nine { width: 430px; }
+      table.ten { width: 480px; }
+      table.eleven { width: 530px; }
+      table.twelve { width: 580px; }
+
+      table.one center { min-width: 30px; }
+      table.two center { min-width: 80px; }
+      table.three center { min-width: 130px; }
+      table.four center { min-width: 180px; }
+      table.five center { min-width: 230px; }
+      table.six center { min-width: 280px; }
+      table.seven center { min-width: 330px; }
+      table.eight center { min-width: 380px; }
+      table.nine center { min-width: 430px; }
+      table.ten center { min-width: 480px; }
+      table.eleven center { min-width: 530px; }
+      table.twelve center { min-width: 580px; }
+
+      table.one .panel center { min-width: 10px; }
+      table.two .panel center { min-width: 60px; }
+      table.three .panel center { min-width: 110px; }
+      table.four .panel center { min-width: 160px; }
+      table.five .panel center { min-width: 210px; }
+      table.six .panel center { min-width: 260px; }
+      table.seven .panel center { min-width: 310px; }
+      table.eight .panel center { min-width: 360px; }
+      table.nine .panel center { min-width: 410px; }
+      table.ten .panel center { min-width: 460px; }
+      table.eleven .panel center { min-width: 510px; }
+      table.twelve .panel center { min-width: 560px; }
+
+      .body .columns td.one,
+      .body .column td.one { width: 8.333333%; }
+      .body .columns td.two,
+      .body .column td.two { width: 16.666666%; }
+      .body .columns td.three,
+      .body .column td.three { width: 25%; }
+      .body .columns td.four,
+      .body .column td.four { width: 33.333333%; }
+      .body .columns td.five,
+      .body .column td.five { width: 41.666666%; }
+      .body .columns td.six,
+      .body .column td.six { width: 50%; }
+      .body .columns td.seven,
+      .body .column td.seven { width: 58.333333%; }
+      .body .columns td.eight,
+      .body .column td.eight { width: 66.666666%; }
+      .body .columns td.nine,
+      .body .column td.nine { width: 75%; }
+      .body .columns td.ten,
+      .body .column td.ten { width: 83.333333%; }
+      .body .columns td.eleven,
+      .body .column td.eleven { width: 91.666666%; }
+      .body .columns td.twelve,
+      .body .column td.twelve { width: 100%; }
+
+      td.offset-by-one { padding-left: 50px; }
+      td.offset-by-two { padding-left: 100px; }
+      td.offset-by-three { padding-left: 150px; }
+      td.offset-by-four { padding-left: 200px; }
+      td.offset-by-five { padding-left: 250px; }
+      td.offset-by-six { padding-left: 300px; }
+      td.offset-by-seven { padding-left: 350px; }
+      td.offset-by-eight { padding-left: 400px; }
+      td.offset-by-nine { padding-left: 450px; }
+      td.offset-by-ten { padding-left: 500px; }
+      td.offset-by-eleven { padding-left: 550px; }
+
+      td.expander {
+        visibility: hidden;
+        width: 0px;
+        padding: 0 !important;
+      }
+
+      table.columns .text-pad,
+      table.column .text-pad {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      table.columns .left-text-pad,
+      table.columns .text-pad-left,
+      table.column .left-text-pad,
+      table.column .text-pad-left {
+        padding-left: 10px;
+      }
+
+      table.columns .right-text-pad,
+      table.columns .text-pad-right,
+      table.column .right-text-pad,
+      table.column .text-pad-right {
+        padding-right: 10px;
+      }
+
+      /* Block Grid */
+
+      .block-grid {
+        width: 100%;
+        max-width: 580px;
+      }
+
+      .block-grid td {
+        display: inline-block;
+        padding:10px;
+      }
+
+      .two-up td {
+        width:270px;
+      }
+
+      .three-up td {
+        width:173px;
+      }
+
+      .four-up td {
+        width:125px;
+      }
+
+      .five-up td {
+        width:96px;
+      }
+
+      .six-up td {
+        width:76px;
+      }
+
+      .seven-up td {
+        width:62px;
+      }
+
+      .eight-up td {
+        width:52px;
+      }
+
+      /* Alignment & Visibility Classes */
+
+      table.center, td.center {
+        text-align: center;
+      }
+
+      h1.center,
+      h2.center,
+      h3.center,
+      h4.center,
+      h5.center,
+      h6.center,
+      p.center {
+        text-align: center;
+      }
+
+      span.center {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      img.center {
+        margin: 0 auto;
+        float: none;
+      }
+
+      .show-for-small,
+      .hide-for-desktop {
+        display: none;
+      }
+
+      /* Typography */
+
+      body, table.body, h1, h2, h3, h4, h5, h6, p, td {
+        color: #222222;
+        font-family: "Helvetica", "Arial", sans-serif;
+        font-weight: normal;
+        padding:0;
+        margin: 0;
+        text-align: left;
+        line-height: 1.3;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        word-break: normal;
+      }
+
+      h1 {font-size: 40px;}
+      h2 {font-size: 36px;}
+      h3 {font-size: 32px;}
+      h4 {font-size: 28px;}
+      h5 {font-size: 24px;}
+      h6 {font-size: 20px;}
+      body, table.body, p, td {font-size: 14px;line-height:19px;}
+
+      p.lead, p.lede, p.leed {
+        font-size: 18px;
+        line-height:21px;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      small {
+        font-size: 10px;
+      }
+
+      a {
+        color: #2ba6cb;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #2795b6 !important;
+      }
+
+      a:active {
+        color: #2795b6 !important;
+      }
+
+      a:visited {
+        color: #2ba6cb !important;
+      }
+
+      h1 a,
+      h2 a,
+      h3 a,
+      h4 a,
+      h5 a,
+      h6 a {
+        color: #2ba6cb;
+      }
+
+      h1 a:active,
+      h2 a:active,
+      h3 a:active,
+      h4 a:active,
+      h5 a:active,
+      h6 a:active {
+        color: #2ba6cb !important;
+      }
+
+      h1 a:visited,
+      h2 a:visited,
+      h3 a:visited,
+      h4 a:visited,
+      h5 a:visited,
+      h6 a:visited {
+        color: #2ba6cb !important;
+      }
+
+      /* Panels */
+
+      .panel {
+        background: #f2f2f2;
+        border: 1px solid #d9d9d9;
+        padding: 10px !important;
+      }
+
+      .sub-grid table {
+        width: 100%;
+      }
+
+      .sub-grid td.sub-columns {
+        padding-bottom: 0;
+      }
+
+      /* Buttons */
+
+      table.button,
+      table.tiny-button,
+      table.small-button,
+      table.medium-button,
+      table.large-button {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      table.button td,
+      table.tiny-button td,
+      table.small-button td,
+      table.medium-button td,
+      table.large-button td {
+        display: block;
+        width: auto !important;
+        text-align: center;
+        background: #2ba6cb;
+        border: 1px solid #2284a1;
+        color: #ffffff;
+        padding: 8px 0;
+      }
+
+      table.tiny-button td {
+        padding: 5px 0 4px;
+      }
+
+      table.small-button td {
+        padding: 8px 0 7px;
+      }
+
+      table.medium-button td {
+        padding: 12px 0 10px;
+      }
+
+      table.large-button td {
+        padding: 21px 0 18px;
+      }
+
+      table.button td a,
+      table.tiny-button td a,
+      table.small-button td a,
+      table.medium-button td a,
+      table.large-button td a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: Helvetica, Arial, sans-serif;
+        color: #ffffff;
+        font-size: 16px;
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+
+      table.tiny-button td a {
+        font-size: 12px;
+        font-weight: normal;
+      }
+
+      table.small-button td a {
+        font-size: 16px;
+      }
+
+      table.medium-button td a {
+        font-size: 20px;
+      }
+
+      table.large-button td a {
+        font-size: 24px;
+      }
+
+      table.button:hover td,
+      table.button:visited td,
+      table.button:active td {
+        background: #2795b6 !important;
+      }
+
+      table.button:hover td a,
+      table.button:visited td a,
+      table.button:active td a {
+        color: #fff !important;
+      }
+
+      table.button:hover td,
+      table.tiny-button:hover td,
+      table.small-button:hover td,
+      table.medium-button:hover td,
+      table.large-button:hover td {
+        background: #2795b6 !important;
+      }
+
+      table.button:hover td a,
+      table.button:active td a,
+      table.button td a:visited,
+      table.tiny-button:hover td a,
+      table.tiny-button:active td a,
+      table.tiny-button td a:visited,
+      table.small-button:hover td a,
+      table.small-button:active td a,
+      table.small-button td a:visited,
+      table.medium-button:hover td a,
+      table.medium-button:active td a,
+      table.medium-button td a:visited,
+      table.large-button:hover td a,
+      table.large-button:active td a,
+      table.large-button td a:visited {
+        color: #ffffff !important;
+      }
+
+      table.secondary td {
+        background: #e9e9e9;
+        border-color: #d0d0d0;
+        color: #555;
+      }
+
+      table.secondary td a {
+        color: #555;
+      }
+
+      table.secondary:hover td {
+        background: #d0d0d0 !important;
+        color: #555;
+      }
+
+      table.secondary:hover td a,
+      table.secondary td a:visited,
+      table.secondary:active td a {
+        color: #555 !important;
+      }
+
+      table.success td {
+        background: #5da423;
+        border-color: #457a1a;
+      }
+
+      table.success:hover td {
+        background: #457a1a !important;
+      }
+
+      table.alert td {
+        background: #c60f13;
+        border-color: #970b0e;
+      }
+
+      table.alert:hover td {
+        background: #970b0e !important;
+      }
+
+      table.radius td {
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+
+      table.round td {
+        -webkit-border-radius: 500px;
+        -moz-border-radius: 500px;
+        border-radius: 500px;
+      }
+
+      /* Outlook First */
+
+      body.outlook p {
+        display: inline !important;
+      }
+
+      /*  Media Queries */
+
+      @media only screen and (max-width: 600px) {
+
+        table[class="body"] img {
+          width: auto !important;
+          height: auto !important;
+        }
+
+        table[class="body"] center {
+          min-width: 0 !important;
+        }
+
+        table[class="body"] .container {
+          width: 95% !important;
+        }
+
+        table[class="body"] .row {
+          width: 100% !important;
+          display: block !important;
+        }
+
+        table[class="body"] .wrapper {
+          display: block !important;
+          padding-right: 0 !important;
+        }
+
+        table[class="body"] .columns,
+        table[class="body"] .column {
+          table-layout: fixed !important;
+          float: none !important;
+          width: 100% !important;
+          padding-right: 0px !important;
+          padding-left: 0px !important;
+          display: block !important;
+        }
+
+        table[class="body"] .wrapper.first .columns,
+        table[class="body"] .wrapper.first .column {
+          display: table !important;
+        }
+
+        table[class="body"] table.columns td,
+        table[class="body"] table.column td {
+          width: 100% !important;
+        }
+
+        table[class="body"] .columns td.one,
+        table[class="body"] .column td.one { width: 8.333333% !important; }
+        table[class="body"] .columns td.two,
+        table[class="body"] .column td.two { width: 16.666666% !important; }
+        table[class="body"] .columns td.three,
+        table[class="body"] .column td.three { width: 25% !important; }
+        table[class="body"] .columns td.four,
+        table[class="body"] .column td.four { width: 33.333333% !important; }
+        table[class="body"] .columns td.five,
+        table[class="body"] .column td.five { width: 41.666666% !important; }
+        table[class="body"] .columns td.six,
+        table[class="body"] .column td.six { width: 50% !important; }
+        table[class="body"] .columns td.seven,
+        table[class="body"] .column td.seven { width: 58.333333% !important; }
+        table[class="body"] .columns td.eight,
+        table[class="body"] .column td.eight { width: 66.666666% !important; }
+        table[class="body"] .columns td.nine,
+        table[class="body"] .column td.nine { width: 75% !important; }
+        table[class="body"] .columns td.ten,
+        table[class="body"] .column td.ten { width: 83.333333% !important; }
+        table[class="body"] .columns td.eleven,
+        table[class="body"] .column td.eleven { width: 91.666666% !important; }
+        table[class="body"] .columns td.twelve,
+        table[class="body"] .column td.twelve { width: 100% !important; }
+
+        table[class="body"] td.offset-by-one,
+        table[class="body"] td.offset-by-two,
+        table[class="body"] td.offset-by-three,
+        table[class="body"] td.offset-by-four,
+        table[class="body"] td.offset-by-five,
+        table[class="body"] td.offset-by-six,
+        table[class="body"] td.offset-by-seven,
+        table[class="body"] td.offset-by-eight,
+        table[class="body"] td.offset-by-nine,
+        table[class="body"] td.offset-by-ten,
+        table[class="body"] td.offset-by-eleven {
+          padding-left: 0 !important;
+        }
+
+        table[class="body"] table.columns td.expander {
+          width: 1px !important;
+        }
+
+        table[class="body"] .right-text-pad,
+        table[class="body"] .text-pad-right {
+          padding-left: 10px !important;
+        }
+
+        table[class="body"] .left-text-pad,
+        table[class="body"] .text-pad-left {
+          padding-right: 10px !important;
+        }
+
+        table[class="body"] .hide-for-small,
+        table[class="body"] .show-for-desktop {
+          display: none !important;
+        }
+
+        table[class="body"] .show-for-small,
+        table[class="body"] .hide-for-desktop {
+          display: inherit !important;
+        }
+      }
+
+
+    </style>
+    <style type="text/css">
+
+      a,
+      a:visited {
+        color: #0e76b8 !important;
+      }
+
+      body, .body {
+        background: #f0f0ed;
+      }
+
+
+      .content-wrapper {
+        background: #fff;
+        border: 10px solid #fff;
+        border-top: 0;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .content-wrapper {
+          border-left: 0;
+          border-right: 0;
+        }
+      }
+
+/**************************************
+ *
+ * Header
+ *
+ **************************************
+/                                   */
+
+/**************************************
+ *
+ * Footer
+ *
+ **************************************
+/                                   */
+      .footer {
+        background: #071d40;
+        border: 10px solid #071d40;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .footer { border: 0; }
+      }
+
+      .footer .contact-info {
+        text-align: center;
+      }
+      .footer .contact-info p {
+        color: #d4d9dd;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .footer .contact-info h3 {
+        border: 0;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-size: 25px;
+      }
+
+      .bbb-logo {
+        margin-top: 20px;
+      }
+
+      .footer h3 {
+        color: #fff;
+        font-size: 18px;
+        border-bottom: 1px solid #18385f;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+
+      .footer p {
+        color: #fff;
+        padding-right: 10px;
+        text-align: justify;
+        font-size: 13px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .footer p { padding: 0; }
+      }
+
+      .footer-last {
+        background: #091e55;
+        border-top: 1px solid #3c89b3;
+        border: 10px solid #091e55;
+        border-top: 0;
+        border-bottom: 0;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .footer-last { border: 0; }
+      }
+
+      .social-links-wrapper {
+        margin: 0 auto;
+        width: 160px;
+      }
+
+      .social-link {
+        width: 20px;
+        height: 21px;
+        margin: 0 10px 10px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        table.body .social-links-wrapper td.social-link {
+          width: 20px !important;
+        }
+      }
+
+/**************************************
+ *
+ * Popular Links
+ *
+ **************************************
+/                                   */
+      table.body .popular-links-wrapper {
+        width: 100%;
+      }
+
+      table.body .popular-links-wrapper td.popular-links {
+        width: 50%;
+      }
+
+      @media only screen and (max-width: 600px) {
+        table.body .popular-links-wrapper td.popular-links {
+          width: 50% !important;
+        }
+      }
+
+      table.body .recent-posts {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 600px) {
+        table.body .recent-posts {
+          width: 100% !important;
+        }
+      }
+
+      table.body .recent-posts td {
+        text-align: center;
+      }
+
+      table.body .recent-posts td.recent_blog_post a,
+      table.body .recent-posts td.recent_blog_post a:visited,
+      table.body .recent-posts td.recent_blog_post a:active {
+        color: #0e76b8 !important;
+        text-decoration: none !important;
+      }
+
+/**************************************
+ *
+ * Article
+ *
+ **************************************
+/                                   */
+      .article-title {
+        font-size: 28px;
+        color: #1f2557;
+      }
+
+      .article-summary {
+        font-style: italic;
+        color: #8f8f8f;
+      }
+
+      .article-source {
+        font-size: 15px;
+        color: #1f2557;
+      }
+
+      .article-wrapper {
+        padding: 0 20px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .article-wrapper {
+          padding: 0 10px !important;
+        }
+      }
+
+/**************************************
+ *
+ * Mobile App
+ *
+ **************************************
+/                                   */
+      .mobile-app {
+        background: #071d40;
+        padding-bottom: 20px;
+      }
+
+      .mobile-app p {
+        color: #fff;
+        text-align: center;
+        width: 80%;
+        margin: 0 10% 10px;
+      }
+      .mobile-app img {
+        margin-bottom: 10px;
+      }
+
+      td.section-heading {
+        padding: 5px 0 !important;
+      }
+      td.section-heading.blue {
+        background: #091e55;
+      }
+      td.section-heading.tan {
+        background: #f4f4f1;
+      }
+      td.section-heading.gray {
+        background: #e1e2e4;
+      }
+
+      h2.section-heading {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 18px;
+        border: 1px solid #0c5390;
+        border-left: 0;
+        border-right: 0;
+        padding: 5px 0;
+        color: #091e55;
+        margin: 0 !important;
+      }
+      h2.section-heading.blue {
+        color: #fff;
+      }
+      h2.section-heading.tan {
+        border-color: #d4d4c9;
+      }
+      h2.section-heading.gray {
+        border-color: #fff;
+      }
+
+      .wrapper.has-heading {
+        padding-top: 0;
+      }
+
+      img.center.header-logo,
+      img.center.header-tag-line {
+        float: left;
+      }
+
+      img.center.header-title {
+        float: right;
+      }
+
+      .copyright {
+        color: #3c89b3;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: left;
+      }
+
+      @media only screen and (max-width: 600px) {
+        img.center.header-logo,
+        img.center.header-tag-line,
+        img.center.header-title {
+          float: none !important;
+        }
+
+        .copyright {
+          text-align: center !important;
+        }
+      }
+
+/**************************************
+ *
+ * Download buttons
+ *
+ **************************************
+/                                   */
+      table.body .download-buttons-wrapper {
+        width: 70%;
+      }
+
+      table.body .download-buttons-wrapper td.download-button {
+        width: 50%;
+      }
+
+      table.body .download-buttons-wrapper td.download-button center {
+        max-width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      @media only screen and (max-width: 600px) {
+        table.body .download-buttons-wrapper {
+          width: 100% !important;
+        }
+
+        table.body .download-buttons-wrapper td.download-button {
+          width: 100% !important;
+          display: block !important;
+        }
+
+        .download-buttons {
+          width: 100% !important;
+        }
+        .download-buttons a {
+          width: 50% !important;
+        }
+        .download-buttons a img {
+          width: 90% !important;
+          margin: 0 5% 20px;
+        }
+      }
+
+/**************************************
+ *
+ * Readings
+ *
+ **************************************
+/                                   */
+      .readings-section {
+        background-color: #eceeee;
+        border-top: 1px solid #fff;
+      }
+
+      .all-books {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 10px;
+        font-size: 13px;
+      }
+
+      .book-info {
+        width: 90%;
+        margin: 0 5%;
+      }
+
+      .book-links a {
+        font-size: 17px;
+        line-height: 25px;
+      }
+
+      .book-title {
+        color: #1f2557;
+        font-size: 20px;
+      }
+
+      .by-line {
+        color: #787462;
+        font-size: 12px;
+      }
+
+      .book-desc {
+        color: #1f2557;
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+
+/**************************************
+ *
+ * Specials
+ *
+ **************************************
+/                                   */
+      .speacials-heading {
+      }
+
+      .special {
+        border-bottom: 10px solid #fff;
+      }
+
+      .special.gold {
+        background-color: #f6f6f4;
+      }
+      .special.silver {
+        background-color: #f0f0f0;
+      }
+
+      .special-info {
+        padding-right: 15px;
+      }
+
+      .special-img img {
+        max-width: 150px !important;
+      }
+
+      .special-title {
+        color: #0a1e56;
+        font-size: 18px;
+      }
+      .special-qty {
+        font-style: italic;
+      }
+
+      .special-link {
+        text-align: right;
+
+      }
+
+      @media only screen and (max-width: 600px) {
+        .special-img img {
+          max-width: 150px !important;
+        }
+
+        .special-info {
+          padding-left: 15px;
+        }
+
+        .special-title,
+        .special-desc,
+        .special-qty,
+        .special-spot,
+        .special-link {
+          text-align: center !important;
+        }
+      }
+
+    </style>
+  </head>
+  <body style="outlook" style="background:#f0f0ed">
+    <table class="body" style="background: #f0f0ed">
+      <tr>
+        <td class="center" align="center" valign="top">
+          <center>
+          <br><br>
+
+          <!-- Header -->
+          <table class="container">
+            <tr>
+              <td>
+
+                <table class="row">
+                  <tr>
+                    <td class="wrapper">
+
+                      <table class="six columns">
+                        <tr>
+                          <td class="center">
+                            <center>
+
+                            <a href="http://www.cmi-gold-silver.com" title="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/cmi-logo.png" alt="CMI Gold &amp; Sliver" class="center header-logo"></a>
+
+                            </center>
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td><td class="wrapper last">
+
+                      <table class="six columns">
+                        <tr>
+                          <td class="center">
+                            <center>
+
+                            <a href="http://www.cmi-gold-silver.com" title="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/articles-heading.png" alt="Articles of Interest" class="center header-title"></a>
+
+                            </center>
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+          <!-- Content -->
+          <table class="content-wrapper">
+            <tr>
+              <td>
+
+                <table class="container">
+                  <tr>
+                    <td>
+
+                      <!-- Specials -->
+                      <table class="row" mc:repeatable>
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td class="section-heading gray">
+
+                                  <h2 class="section-heading gray">Specials</h2>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Gold Specials -->
+                      <table class="row special gold" mc:repeatable>
+                        <tr>
+                          <td class="wrapper">
+
+                            <table class="four columns">
+                              <tr>
+                                <td class="special-img" mc:edit="special_img">
+                                  <center>
+
+                                  <img src="_img/coin-5.jpg" alt="" class="center">
+
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                          <td class="wrapper last">
+
+                            <table class="eight columns">
+                              <tr>
+                                <td>
+                                  <div class="special-info">
+
+                                    <p class="special-title" mc:edit="special_title">Specials Title</p>
+                                    <p class="special-desc" mc:edit="special_desc">Specials Desc</p>
+                                    <p class="special-qty" mc:edit="special_qty">Specials Qty</p>
+                                    <p class="special-spot" mc:edit="special_spot">Specials Spot</p>
+                                    <p class="special-link"><a href="http://www.cmi-gold-silver.com/specials-gold/" title="All Gold Specials">All Gold Specials</a></p>
+
+                                  </div>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Silver Specials -->
+                      <table class="row special silver" mc:repeatable>
+                        <tr>
+                          <td class="wrapper">
+
+                            <table class="four columns">
+                              <tr>
+                                <td class="special-img center" mc:edit="special_img">
+                                  <center>
+
+                                  <img src="_img/slivereagle-1.jpg" alt="" class="center">
+
+                                  </center>
+                                  </td>
+                                  <td class="expander"></td>
+                                </tr>
+                            </table>
+
+                          </td>
+                          <td class="wrapper last">
+
+                            <table class="eight columns">
+                              <tr>
+                                <td>
+                                  <div class="special-info">
+
+                                  <p class="special-title" mc:edit="special_title">Specials Title</p>
+                                  <p class="special-desc" mc:edit="special_desc">Specials Desc</p>
+                                  <p class="special-qty" mc:edit="special_qty">Specials Qty</p>
+                                  <p class="special-spot" mc:edit="special_spot">Specials Spot</p>
+                                  <p class="special-link"><a href="http://www.cmi-gold-silver.com/specials-silver/" title="All Silver Specials">All Silver Specials</a></p>
+
+                                  </div>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+
+                      <!-- Hero -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+                                  <!-- <a href="http://www.cmi-gold-silver.com" alt="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/new-site-header.jpg" alt="New site"></a> -->
+                                  <a href="http://cmi-gold-silver.com/gold-silver-spot-prices-mobile-app.html" alt="Spot Prices App"><img src="http://www.cmi-gold-silver.com/email/respo/spot-prices-app.jpg" alt="Spot Prices"></a>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!--
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper">
+
+                            <table class="five columns">
+                              <tr>
+                                <td class="center">
+                                  <center>
+
+                                  <a href="http://www.cmi-gold-silver.com" title="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/phone.jpg" alt="CMI Gold &amp; Sliver" class="center"></a>
+
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td><td class="wrapper last">
+
+                            <table class="seven columns">
+                              <tr>
+                                <td>
+                                  <p>We’ve just launched an all-new format for our Daily Prices and Articles of Interest emails, which allow for easy viewing on all devices.</p>
+                                  <p>You’ll now enjoy the easy reading of our emails from the convenience of your smartphone, tablet and of course, your desktop computer.</p>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+                      -->
+
+                      <hr>
+
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td class="center">
+
+                                  <div class="article-wrapper">
+                                    <h1 class="article-title" mc:edit="article_title">Why Did Both Silver and Gold Become Money?</h1>
+                                  </div>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <div class="article-summary article-wrapper" mc:edit="article_summary">
+                                    We live in a world of central banks and paper money, so the question of why two different metals became money may seem moot. However, it is important to understand honest money if we are to break the cycle of financial crises and move forward to the gold standard.
+                                  </div>
+
+                                </td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <div class="article-source article-wrapper" mc:edit="article_source">
+                                    Keith Weiner, Contributor<br>
+                                    May 10, 2014<br>
+                                    forbes.com
+                                  </div>
+
+                                </td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <div class="article-body article-wrapper" mc:edit="article_body">
+                                    <p>We live in a world of central banks and paper money, so the question of why two different metals became money may seem moot. However, it is important to understand honest money if we are to break the cycle of financial crises and move forward to the gold standard.</p>
+                                    <p>Gold and silver share many physical properties. They are heavy, shiny, soft, conductive, and durable metals. It’s somewhat coincidental that they are so similar. Gold and silver fill different human needs, and evolved through different paths.</p>
+                                    <p>Money solves a problem called the coincidence of wants. For example, suppose the maker of leather moccasins is hungry. He can only trade directly with the fisherman when the fisherman happens to need a new pair of shoes. Barter is extremely inefficient and therefore limited.</p>
+                                    <p>Instead of directly trading shoes for fish, the shoemaker exchanges his shoes for salt, and then trades that salt for the fish he wants to eat. Indirect trade makes it possible for the shoemaker to trade with the fisherman, as both can agree on using salt. Unfortunately, this leads to a new problem. Using an intermediate good adds an extra trade to every transaction, and there is a frictional loss inherent in every trade (see my article for a full explanation).</p>
+                                    <p>Marketability is a measure of the amount of this loss, which is different for each good. The more marketable the good, the less the loss one incurs. For example, food is more marketable than footwear. Salt is more marketable than food. Gold is more marketable than salt.</p>
+                                    <p>Avoiding losses is a powerful motivation to use the more marketable good in preference to the less marketable. This is why everyone is motivated to find the one good with the least loss. Gold is the most marketable good, the best money.</p>
+                                    <p>If gold is the best, then why is silver also money?</p>
+                                    <p>It is significant that a second commodity survives and coexists with gold to this day. No one wants to use the second best money, and lose more than the bare minimum. One explanation is that smaller denominations are possible with silver coins than with gold. It is important to have coins for grocery shopping, but there is a more important economic principle than just making small change. Silver is the most marketable good in one important case.</p>
+                                    <p>Everyone needs to save while working, to pay for expenses in retirement. Working people must set aside part of their weekly wages. Silver has an advantage over gold, which becomes clear with an example. Suppose Jen makes $1000 a week. She wants to set aside $100. This is a tiny amount of gold, well under 1/10 ounce. It’s an extremely small coin, and it costs more to manufacture and is harder to sell. To buy it, Jen must pay a big premium over the value of the gold in the coin. This cost comes straight out of her savings.</p>
+                                    <p>Fortunately, Jen can turn to silver. Her weekly savings will buy about 5 ounces of silver. Compared to a 1/10 ounce gold coin, a 1 ounce silver coin is a typical size. It’s priced closer to the value of the silver it contains. The bottom line is that Jen loses much less of her hard-earned money by using silver.</p>
+                                    <p>Wait a minute. Earlier, we saw that gold had the least loss, that gold is the most marketable good. Now silver seems to claim this title. This is not a contradiction.  There are two types of marketability. For larger transactions, such as typical commercial trades, gold is superior. Gold imposes the least loss in these trades. In other transactions, far less value is exchanged. The most important is the typical small purchase used for savings. For saving, silver is superior to gold because it offers a smaller loss.</p>
+                                    <p>With this background, it’s possible to state the reason why there are two forms of money. Gold is the most marketable good when large values are traded. Silver is the most marketable good in small transactions.</p>
+                                  </div>
+
+                                </td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Mobile App -->
+                      <table class="row mobile-app">
+                        <tr>
+                          <td class="wrapper last has-heading">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td class="section-heading blue">
+
+                                  <h2 class="section-heading blue">Download our mobile app</h2>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="row mobile-app">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td class="center">
+                                  <center>
+
+                                  <p class="center">Gain instant access to Live Spot Prices, Interactive Charts, Special Offers, Bill's Blog, all on your smartphone.</p>
+
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="row mobile-app">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td class="center">
+                                  <center>
+
+                                  <table class="download-buttons-wrapper center">
+                                    <tr>
+                                      <td class="download-button center">
+                                        <center>
+
+                                        <a href="https://itunes.apple.com/us/app/cmi-prices/id787328105?mt=8" title="App Store"><img src="http://www.cmi-gold-silver.com/email/respo/app-store.png" alt="App Store" class="center"></a>
+
+                                        </center>
+                                      </td><td class="download-button center">
+                                        <center>
+
+                                        <a href="https://play.google.com/store/apps/details?id=com.cmi_gold_silver.cmiprices" title="Google Play"><img src="http://www.cmi-gold-silver.com/email/respo/google-play.png" alt="Google Play" class="center"></a>
+
+                                        </center>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Other Links -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper">
+
+                            <table class="seven columns">
+                              <tr>
+                                <td class="section-heading tan">
+
+                                  <h2 class="section-heading tan">Popular Links</h2>
+
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+
+                                  <br>
+                                  <table class="popular-links-wrapper">
+                                    <tr>
+                                      <td class="popular-links">
+
+                                        <table>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/specials-gold/" title="">Gold Specials</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/buy-gold-bullion-coins/" title="">Gold Investing<br>Information</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/buy-gold-bullion-bars/" title="">Gold Bullion Bars</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/gold-coins/" title="">Gold Bullion Coins</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/american-eagles-gold-coins/" title="">American Gold Eagle<br>Coins</a></td></tr>
+                                        </table>
+
+                                        </td><td class="popular-links">
+
+                                        <table>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/specials-silver/" title="">Silver Specials</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/buy-silver-bullion-coins/" title="">Silver Investing<br>Information</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/silver-bullion-bars/" title="">Silver Bullion Bars</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/american-silver-eagles/" title="">American Silver Eagles</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/90circulated/" title="">Junk Silver Coins</a></td></tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                                <td class="expand"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                          <td class="wrapper last">
+
+                            <table class="five columns">
+                              <tr>
+                                <td class="section-heading tan">
+
+                                  <h2 class="section-heading tan">Latest Blog Posts</h2>
+
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+
+                                  <br>
+                                  <table class="recent-posts">
+                                    <tr mc:repeatable>
+                                      <td mc:edit="recent_blog_post"><a href="" title="">Blog Post</a></td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Readings -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td class="section-heading gray">
+
+                                  <h2 class="section-heading gray">Essential Reading</h2>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table class="row readings-section">
+                        <tr>
+                          <td class="wrapper">
+
+                            <table class="four columns">
+                              <tr>
+                                <td class="center">
+                                  <center>
+
+                                  <a href="http://www.cmi-gold-silver.com/blog/the-mystery-of-banking/"><img src="http://www.cmi-gold-silver.com/email/respo/book.jpg?072314" alt="Essential Reading" class="center"></a>
+                                  <p class="all-books"><a href="http://www.cmi-gold-silver.com/austrian-economics-gold-books/" title="View all books">View all books</a></p>
+
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td><td class="wrapper last">
+
+                            <table class="eight columns">
+                              <tr>
+                                <td>
+                                  <div class="book-info">
+                                    <h3 class="book-title">The Mystery of Banking</h3>
+                                    <p class="by-line">by: Murray Rothbard</p>
+                                    <p class="book-desc">Discusses banking fundamentals, how expanding money supplies in the past have led to booms followed by busts. It concludes with a chapter that dismembers the Fed. (Any discussion today about banking mandates a discussion of the Fed.) If this book had been used as a college text over the last two decades and discussed honestly in classrooms, fractional reserve banking and the Fed would already be history.</p>
+                                    <p class="book-links">
+                                      <a href="http://www.cmi-gold-silver.com/blog/the-mystery-of-banking/" title="Read our review">Read our review</a><br>
+                                      <a href="http://www.amazon.com/dp/1105528782/ref=as_li_ss_til?tag=lewrockwell&camp=0&creative=0&linkCode=as4&creativeASIN=1105528782&adid=1YG0A02Z9SEDAM4YQ6P5" title="Buy the book">Buy the book</a>
+                                    </p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+
+          <!-- Footer -->
+          <table class="footer">
+            <tr>
+              <td>
+
+                <table class="container">
+                  <tr>
+                    <td>
+
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper">
+
+                            <table class="seven columns">
+                              <tr>
+                                <td>
+
+                                  <h3>BUY  -  SELL  -  TRADE</h3>
+                                  <p>CMI Gold &amp; Silver Inc. buys, sells and trades all the popular forms of gold and silver. Our sell prices are among the lowest of all established dealers. Our buy prices are nearly always the highest. Specials pricing for trades. Call us. Friendliest service on the internet.</p>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                          <td class="wrapper last">
+
+                            <table class="five columns">
+                              <tr>
+                                <td class="center contact-info">
+                                  <center>
+
+                                  <p>Call Us Toll Free</p>
+                                  <h3>800.528.1380</h3>
+                                  <p>7am - 5pm MST</p>
+                                  <br>
+                                  <a href="http://www.bbb.org/central-northern-western-arizona/business-reviews/gold-silver-and-platinum-dealers/cmi-gold-silver-inc-in-phoenix-az-4606/" title="A+ from BBB"><img src="http://www.cmi-gold-silver.com/email/respo/bbb.png" alt="A+ from BBB" class="center"></a>
+                                  <br>
+
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+          <table class="footer-last">
+            <tr>
+              <td>
+
+                <table class="row">
+                  <tr>
+                    <td class="wrapper">
+
+                      <table class="eight columns">
+                        <tr>
+                          <td class="copyright">
+
+                            Copyright MMXIII, CMI Gold &amp; Silver Inc.
+
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td><td class="wrapper last">
+
+                      <table class="four columns">
+                        <tr>
+                          <td class="center">
+                            <center>
+
+                            <table class="social-links-wrapper">
+                              <tr>
+                                <td class="social-link">
+
+                                  <a href="http://www.facebook.com/cmigoldsilver" title="facebook" class="center">
+                                    <img src="http://www.cmi-gold-silver.com/email/respo/fb.png" alt="facebook" class="center">
+                                  </a>
+
+                                </td><td class="social-link">
+
+                                  <a href="http://www.twitter.com/cmigoldsilver" title="twitter" class="center">
+                                    <img src="http://www.cmi-gold-silver.com/email/respo/tw.png" alt="twitter" class="center">
+                                  </a>
+
+                                </td><!-- <td class="social-link">
+
+                                  <a href="" title="" class="center">
+                                    <img src="http://www.cmi-gold-silver.com/email/respo/in.png" alt="linkedin">
+                                  </a>
+
+                                </td> --><td class="social-link">
+
+                                  <a href="https://plus.google.com/115588792106364253435/about" title="" class="center">
+                                    <img src="http://www.cmi-gold-silver.com/email/respo/gp.png" alt="google+" class="center">
+                                  </a>
+
+                                </td>
+                              </tr>
+                            </table>
+
+                            </center>
+                          </td>
+                          <td class="expander"></td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+
+          <br>
+          <a href="*|UNSUB|*">Unsubscribe</a> *|EMAIL|*<br>from this list.
+          <br><br>
+
+          </center>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
