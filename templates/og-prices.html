@@ -703,13 +703,12 @@
 
       a,
       a:visited {
-        color: #0e76b8 !important;
+        color: #399159 !important;
       }
 
       body, .body {
-        background: #f0f0ed;
+        background: #d2d2d2;
       }
-
 
       .content-wrapper {
         background: #fff;
@@ -724,26 +723,15 @@
         }
       }
 
-/**************************************
- *
- * Header
- *
- **************************************
-/                                   */
-      .specials-lead {
-        color: #08163b;
-        text-align: center;
-      }
+      /*
 
-/**************************************
- *
- * Footer
- *
- **************************************
-/                                   */
+       Footer
+===========================================================================
+       */
+
       .footer {
-        background: #071d40;
-        border: 10px solid #071d40;
+        background: #2d7448;
+        border: 10px solid #2d7448;
       }
 
       @media only screen and (max-width: 600px) {
@@ -774,7 +762,7 @@
       .footer h3 {
         color: #fff;
         font-size: 18px;
-        border-bottom: 1px solid #18385f;
+        border-bottom: 1px solid #275638;
         padding-bottom: 10px;
         margin-bottom: 10px;
       }
@@ -791,15 +779,21 @@
       }
 
       .footer-last {
-        background: #091e55;
-        border-top: 1px solid #3c89b3;
-        border: 10px solid #091e55;
+        background: #25924E;
+        border-top: 1px solid #25924E;
+        border: 10px solid #25924E;
         border-top: 0;
         border-bottom: 0;
       }
 
       @media only screen and (max-width: 600px) {
         .footer-last { border: 0; }
+      }
+
+      .copyright {
+        color: #275638;
+        font-size: 12px;
+        line-height: 20px;
       }
 
       .social-links-wrapper {
@@ -819,23 +813,35 @@
         }
       }
 
-/**************************************
- *
- * Popular Links
- *
- **************************************
-/                                   */
+
+      /*
+
+       Other Links
+===========================================================================
+       */
+
+      ul {
+        list-style: none;
+        margin: 20px 0 0;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+        font-size: 13px;
+      }
+
       table.body .popular-links-wrapper {
         width: 100%;
       }
 
       table.body .popular-links-wrapper td.popular-links {
-        width: 50%;
+        width: 33.333%;
       }
 
       @media only screen and (max-width: 600px) {
         table.body .popular-links-wrapper td.popular-links {
-          width: 50% !important;
+          width: 33.33% !important;
         }
       }
 
@@ -860,45 +866,15 @@
         text-decoration: none !important;
       }
 
-/**************************************
- *
- * Article
- *
- **************************************
-/                                   */
-      .article-title {
-        font-size: 28px;
-        color: #1f2557;
-      }
 
-      .article-summary {
-        font-style: italic;
-        color: #8f8f8f;
-      }
+      /*
 
-      .article-source {
-        font-size: 15px;
-        color: #1f2557;
-      }
+       Mobile App
+===========================================================================
+       */
 
-      .article-wrapper {
-        padding: 0 20px;
-      }
-
-      @media only screen and (max-width: 600px) {
-        .article-wrapper {
-          padding: 0 10px !important;
-        }
-      }
-
-/**************************************
- *
- * Mobile App
- *
- **************************************
-/                                   */
       .mobile-app {
-        background: #071d40;
+        background: #2D7448;
         padding-bottom: 20px;
       }
 
@@ -916,7 +892,7 @@
         padding: 5px 0 !important;
       }
       td.section-heading.blue {
-        background: #091e55;
+        background: #25924E;
       }
       td.section-heading.tan {
         background: #f4f4f1;
@@ -930,18 +906,18 @@
         text-transform: uppercase;
         font-weight: normal;
         font-size: 18px;
-        border: 1px solid #0c5390;
+        border: 1px solid #2D7448;
         border-left: 0;
         border-right: 0;
         padding: 5px 0;
-        color: #091e55;
+        color: #399159;
         margin: 0 !important;
       }
       h2.section-heading.blue {
         color: #fff;
       }
       h2.section-heading.tan {
-        border-color: #d4d4c9;
+        border-color: #d2d2d2;
       }
       h2.section-heading.gray {
         border-color: #fff;
@@ -950,6 +926,128 @@
       .wrapper.has-heading {
         padding-top: 0;
       }
+
+
+      /*
+
+       Spot Price Meta
+===========================================================================
+       */
+
+      .spot-price-meta {
+        padding: 10px 0 !important;
+        background: #ededed;
+        border-top: 1px solid #cecfbc;
+      }
+
+      .spot-price-meta h2 {
+        text-align: center;
+        color: #404040;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .spot-price-meta h3 {
+        text-align: center;
+        color: #404040;
+        font-size: 13px;
+        line-height: 20px;
+      }
+
+
+      /*
+
+       Spot Prices Tables
+===========================================================================
+       */
+
+      table.body .spot-price-row-wrapper { width: 100%; }
+
+      table.body .spot-price-row-wrapper .spot-price-row { width: 100% }
+      table.body .spot-price-row-wrapper .spot-price-row.gs-ratio { width: 20% }
+
+      table.body .spot-price-row-wrapper .spot-price-row .today-col  { width: 20% }
+      table.body .spot-price-row-wrapper .spot-price-row .change-col { width: 20% }
+      table.body .spot-price-row-wrapper .spot-price-row .week-col   { width: 20% }
+      table.body .spot-price-row-wrapper .spot-price-row .month-col  { width: 20% }
+      table.body .spot-price-row-wrapper .spot-price-row .year-col   { width: 20% }
+
+      @media only screen and (max-width: 600px) {
+        table.body .spot-price-row-wrapper {
+          width: 50% !important;
+          float: left !important;
+        }
+
+        table.body .spot-price-row-wrapper .spot-price-row.gs-ratio {
+          width: 100% !important;
+        }
+
+        table.body .spot-price-row-wrapper .spot-price-row td {
+          display: block !important;
+          width: 100% !important;
+        }
+      }
+
+      table.body .spot-price-row-wrapper td {
+        padding-bottom: 0;
+      }
+
+      table.body .spot-price-row td {
+        padding: 10px 0;
+      }
+
+      .spot-price-heading {
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #404040;
+        padding-bottom: 5px;
+      }
+
+      .spot-price-row.headings td {
+        color: #000;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .spot-price-row td {
+        margin: 0;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .spot-price-row td span {
+          display: block !important;
+          text-align: left;
+          padding-left: 10px !important;
+        }
+
+        .spot-price-row.headings td span {
+          text-align: right;
+          padding-left: 0 !important;
+          padding-right: 10px !important;
+        }
+
+        .spot-price-row.gs-ratio td span {
+          text-align: center;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+
+      /* Colors */
+      .spot-price-row.headings { padding: 0; }
+
+      .spot-price-row.headings .today-col  { background: #fff; }
+      .spot-price-row.headings .change-col { background: #fff; }
+      .spot-price-row.headings .week-col   { background: #fff; }
+      .spot-price-row.headings .month-col  { background: #fff; }
+      .spot-price-row.headings .year-col   { background: #fff; }
+
+      .spot-price-row .today-col  { background: #A0CDB1; }
+      .spot-price-row .change-col { background: #f8f9f7; }
+      .spot-price-row .week-col   { background: #ededed; }
+      .spot-price-row .month-col  { background: #f8f9f7; }
+      .spot-price-row .year-col   { background: #ededed; }
 
       img.center.header-logo,
       img.center.header-tag-line {
@@ -961,30 +1059,9 @@
       }
 
       .copyright {
-        color: #3c89b3;
-        font-size: 12px;
-        line-height: 20px;
         text-align: left;
       }
 
-      @media only screen and (max-width: 600px) {
-        img.center.header-logo,
-        img.center.header-tag-line,
-        img.center.header-title {
-          float: none !important;
-        }
-
-        .copyright {
-          text-align: center !important;
-        }
-      }
-
-/**************************************
- *
- * Download buttons
- *
- **************************************
-/                                   */
       table.body .download-buttons-wrapper {
         width: 70%;
       }
@@ -1007,6 +1084,17 @@
           width: 100% !important;
           display: block !important;
         }
+      }
+
+      .see-for-yourself {
+        font-size: 17px;
+        line-height: 23px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .see-for-yourself {
+          text-align: center;
+        }
 
         .download-buttons {
           width: 100% !important;
@@ -1018,14 +1106,41 @@
           width: 90% !important;
           margin: 0 5% 20px;
         }
+
+        img.center.header-logo,
+        img.center.header-tag-line,
+        img.center.header-title {
+          float: none !important;
+        }
+
+        table.body .spot-price-row p {
+          padding: 0 20px !important;
+          text-align: left !important;
+          font-size: 14px;
+        }
+
+        table.body .spot-price-row.headings p {
+          text-align: right !important;
+          font-size: 12px;
+          line-height: 19px !important;
+        }
+
+        .spot-price-row.headings .today-col  { background: #d3e0e6 !important; }
+        .spot-price-row.headings .change-col { background: #f8f9f7 !important; }
+        .spot-price-row.headings .week-col   { background: #ebece8 !important; }
+        .spot-price-row.headings .month-col  { background: #f8f9f7 !important; }
+        .spot-price-row.headings .year-col   { background: #ebece8 !important; }
+
+        .copyright {
+          text-align: center !important;
+        }
       }
 
-/**************************************
- *
- * Readings
- *
- **************************************
-/                                   */
+      /*
+
+       Redings
+===========================================================================
+       */
       .readings-section {
         background-color: #eceeee;
         border-top: 1px solid #fff;
@@ -1064,7 +1179,7 @@
         margin-bottom: 20px;
       }
 
-/**************************************
+      /**************************************
  *
  * Specials
  *
@@ -1093,7 +1208,7 @@
       }
 
       .special-title {
-        color: #0a1e56;
+        color: #404040;
         font-size: 18px;
       }
       .special-qty {
@@ -1123,10 +1238,32 @@
         }
       }
 
+      .gold-prices-heading {
+        background: #1f2557;
+        color:#fff;
+        padding: 10px 0 !important;
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      a.gold-prices-button {
+        display:block;
+        background:#2e63a7;
+        color:#fff !important;
+        text-decoration:none;
+        text-transform:uppercase;
+        padding: 5px 0;
+        width: 40%;
+      }
+
+      a.gold-prices-button:visited,
+      a.gold-prices-button:active {
+        color: #fff !important;
+      }
     </style>
   </head>
-  <body style="outlook" style="background:#f0f0ed">
-    <table class="body" style="background: #f0f0ed">
+  <body style="outlook" style="background:#efefef">
+    <table class="body" style="background:#efefef">
       <tr>
         <td class="center" align="center" valign="top">
           <center>
@@ -1146,7 +1283,7 @@
                           <td class="center">
                             <center>
 
-                            <a href="http://www.cmi-gold-silver.com" title="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/cmi-logo.png" alt="CMI Gold &amp; Sliver" class="center header-logo"></a>
+                            <a href="http://www.onlygold.com" title="OnlyGold"><img src="https://gallery.mailchimp.com/6150de72d2831c68a20ff693e/images/474bca0c-a2f7-45ec-bbff-67567274303a.png" alt="OnlyGold" class="center header-logo"></a>
 
                             </center>
                           </td>
@@ -1161,7 +1298,7 @@
                           <td class="center">
                             <center>
 
-                            <a href="http://www.cmi-gold-silver.com" title="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/specials-heading.png" alt="Specials" class="center header-title"></a>
+                            <a href="http://www.onlygold.com" title="OnlyGold"><img src="https://gallery.mailchimp.com/6150de72d2831c68a20ff693e/images/bee97819-3a5a-4e3c-93fe-dd21b1c02bad.png" alt="OnlyGold" class="center header-title"></a>
 
                             </center>
                           </td>
@@ -1187,7 +1324,7 @@
                     <td>
 
                       <!-- Specials -->
-                      <!-- <table class="row" mc:repeatable>
+                      <table class="row" mc:repeatable>
                         <tr>
                           <td class="wrapper last">
 
@@ -1204,88 +1341,83 @@
 
                           </td>
                         </tr>
-                      </table> -->
-
-                      <!-- Hero -->
-                      <table class="row">
-                        <tr>
-                          <td class="wrapper last">
-
-                            <table class="twelve columns">
-                              <tr>
-                                <td>
-                                  <a href="http://www.cmi-gold-silver.com" alt="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/specials-header.jpg" alt="CMI Gold &amp; Silver Specials"></a>
-                                </td>
-                                <td class="expander"></td>
-                              </tr>
-                            </table>
-
-                          </td>
-                        </tr>
-                      </table>
-
-                      <table class="row">
-                        <tr>
-                          <td class="wrapper last">
-
-                            <table class="tweleve columns">
-                              <tr>
-                                <td>
-                                  <center>
-
-                                  <p class="specials-lead">The items in this email are offered at below market prices because they are small quantities of products that we do not offer in our normal course of business, such as collectible and numismatic coins.</p>
-
-                                  </center>
-                                </td>
-                                <td class="expander"></td>
-                              </tr>
-                            </table>
-
-                          </td>
-                        </tr>
                       </table>
 
                       <!-- Gold Specials -->
-                      <table class="row special" mc:repeatable>
-                        <tr> 
-                          <td class="wrapper last">
-                            <center>
+                      <table class="row special gold" mc:repeatable>
+                        <tr>
+                          <td class="wrapper">
 
-                            <table class="tweleve columns">
+                            <table class="four columns">
+                              <tr>
+                                <td class="special-img" mc:edit="special_img">
+                                  <center>
+
+                                  <img src="_img/coin-5.jpg" alt="" class="center">
+
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                          <td class="wrapper last">
+
+                            <table class="eight columns">
                               <tr>
                                 <td>
-                                  <center>
-                                    
-                                  <div style="border-top:1px solid #c0c0c0;">
-                                    <p class="special-title" style="text-align:center;font-size:30px;line-height:35px;margin-top:30px;" mc:edit="special_title">1 oz. Gold Eagles</p>
-                                    <p style="text-align:center" mc:edit="special_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                                    <p class="special-price" style="color:#0a1e56;text-align:center;font-size:20px;line-height:25px;" mc:edit="special_price">$49 over spot</p>
-                                    <div mc:edit="special_image"><img src="img/gold-coin.jpg" style="max-width:100%!important"></div>
+                                  <div class="special-info">
+
+                                    <p class="special-title" mc:edit="special_title">Specials Title</p>
+                                    <p class="special-desc" mc:edit="special_desc">Specials Desc</p>
+                                    <p class="special-qty" mc:edit="special_qty">Specials Qty</p>
+                                    <p class="special-spot" mc:edit="special_spot">Specials Spot</p>
+                                    <p class="special-link"><a href="http://www.cmi-gold-silver.com/specials-gold/" title="All Gold Specials">All Gold Specials</a></p>
+
                                   </div>
-
-                                  </center>
                                 </td>
                                 <td class="expander"></td>
                               </tr>
                             </table>
 
-                            </center>
                           </td>
                         </tr>
                       </table>
 
-                      <table class="row" style="border-top:1px solid #c0c0c0;">
+                      <!-- Silver Specials -->
+                      <table class="row special silver" mc:repeatable>
                         <tr>
-                          <td class="wrapper last">
+                          <td class="wrapper">
 
-                            <table class="twelve columns">
+                            <table class="four columns">
                               <tr>
-                                <td>
+                                <td class="special-img center" mc:edit="special_img">
                                   <center>
 
-                                  <p style="text-align:center;font-size:30px;line-height:35px;color:#0a1e56;margin-top:20px;">See All Special Offers</p>
+                                  <img src="_img/slivereagle-1.jpg" alt="" class="center">
 
                                   </center>
+                                  </td>
+                                  <td class="expander"></td>
+                                </tr>
+                            </table>
+
+                          </td>
+                          <td class="wrapper last">
+
+                            <table class="eight columns">
+                              <tr>
+                                <td>
+                                  <div class="special-info">
+
+                                  <p class="special-title" mc:edit="special_title">Specials Title</p>
+                                  <p class="special-desc" mc:edit="special_desc">Specials Desc</p>
+                                  <p class="special-qty" mc:edit="special_qty">Specials Qty</p>
+                                  <p class="special-spot" mc:edit="special_spot">Specials Spot</p>
+                                  <p class="special-link"><a href="http://www.cmi-gold-silver.com/specials-silver/" title="All Silver Specials">All Silver Specials</a></p>
+
+                                  </div>
                                 </td>
                                 <td class="expander"></td>
                               </tr>
@@ -1295,32 +1427,53 @@
                         </tr>
                       </table>
 
-                      <table class="row" style="padding-bottom:20px;">
+                      <!--
+                      <table class="row">
                         <tr>
-                          <td class="wrapper last">
+                          <td class="wrapper">
 
-                            <table class="twelve columns">
+                            <table class="five columns">
                               <tr>
                                 <td class="center">
                                   <center>
 
-                                  <table class="download-buttons-wrapper center">
-                                    <tr>
-                                      <td class="download-button center">
-                                        <center>
+                                  <a href="http://www.cmi-gold-silver.com" title="CMI Gold &amp; Silver"><img src="http://www.cmi-gold-silver.com/email/respo/phone.jpg" alt="CMI Gold &amp; Sliver" class="center"></a>
 
-                                        <a href="http://www.cmi-gold-silver.com/specials-gold/"><img src="http://www.cmi-gold-silver.com/email/gold-specials-button.png" class="center"></a>
+                                  </center>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
 
-                                        </center>
-                                      </td><td class="download-button center">
-                                        <center>
+                          </td><td class="wrapper last">
 
-                                        <a href="http://www.cmi-gold-silver.com/specials-silver/"><img src="http://www.cmi-gold-silver.com/email/silver-specials-button.png" class="center"></a>
+                            <table class="seven columns">
+                              <tr>
+                                <td>
+                                  <p>We’ve just launched an all-new format for our Daily Prices and Articles of Interest emails, which allow for easy viewing on all devices.</p>
+                                  <p>You’ll now enjoy the easy reading of our emails from the convenience of your smartphone, tablet and of course, your desktop computer.</p>
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
 
-                                        </center>
-                                      </td>
-                                    </tr>
-                                  </table>
+                          </td>
+                        </tr>
+                      </table>
+                      -->
+
+                      <!-- Spot Prices Meta -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td class="spot-price-meta center">
+                                  <center>
+
+                                  <h3>Spot Prices as of close of trading in New York</h3>
+                                  <h2>*|DATE:l, F d, Y|*</h2>
 
                                   </center>
                                 </td>
@@ -1331,6 +1484,399 @@
                           </td>
                         </tr>
                       </table>
+
+
+                      <!-- Gold Spot Prices -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <h3 class="spot-price-heading">Gold</h3>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="headings spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                              <span>Today</span>
+
+                                            </td><td class="change-col">
+
+                                              <span>Change</span>
+
+                                            </td><td class="week-col">
+
+                                              <span>Week Ago</span>
+
+                                            </td><td class="month-col">
+
+                                              <span>Month Ago</span>
+
+                                            </td><td class="year-col">
+
+                                              <span>Year Ago</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                              <span mc:edit="spot_gold_today">--</span>
+
+                                            </td><td class="change-col">
+
+                                              <span mc:edit="spot_gold_change">--</span>
+
+                                            </td><td class="week-col">
+
+                                              <span mc:edit="spot_gold_week">--</span>
+
+                                            </td><td class="month-col">
+
+                                              <span mc:edit="spot_gold_month">--</span>
+
+                                            </td><td class="year-col">
+
+                                              <span mc:edit="spot_gold_year">--</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Silver Spot Prices -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <h3 class="spot-price-heading">Silver</h3>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="headings spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                              <span>Today</span>
+
+                                            </td><td class="change-col">
+
+                                              <span>Change</span>
+
+                                            </td><td class="week-col">
+
+                                              <span>Week Ago</span>
+
+                                            </td><td class="month-col">
+
+                                              <span>Month Ago</span>
+
+                                            </td><td class="year-col">
+
+                                              <span>Year Ago</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                              <span mc:edit="spot_silver_today">--</span>
+
+                                            </td><td class="change-col">
+
+                                              <span mc:edit="spot_silver_change">--</span>
+
+                                            </td><td class="week-col">
+
+                                              <span mc:edit="spot_silver_week">--</span>
+
+                                            </td><td class="month-col">
+
+                                              <span mc:edit="spot_silver_month">--</span>
+
+                                            </td><td class="year-col">
+
+                                              <span mc:edit="spot_silver_year">--</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Platinum Spot Prices -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <h3 class="spot-price-heading">Platinum</h3>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="headings spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                              <span>Today</span>
+
+                                            </td><td class="change-col">
+
+                                              <span>Change</span>
+
+                                            </td><td class="week-col">
+
+                                              <span>Week Ago</span>
+
+                                            </td><td class="month-col">
+
+                                              <span>Month Ago</span>
+
+                                            </td><td class="year-col">
+
+                                              <span>Year Ago</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                              <span mc:edit="spot_platinum_today">--</span>
+
+                                            </td><td class="change-col">
+
+                                              <span mc:edit="spot_platinum_change">--</span>
+
+                                            </td><td class="week-col">
+
+                                              <span mc:edit="spot_platinum_week">--</span>
+
+                                            </td><td class="month-col">
+
+                                              <span mc:edit="spot_platinum_month">--</span>
+
+                                            </td><td class="year-col">
+
+                                              <span mc:edit="spot_platinum_year">--</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Paladium Spot Prices -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <h3 class="spot-price-heading">Palladium</h3>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="headings spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                              <span>Today</span>
+
+                                            </td><td class="change-col">
+
+                                              <span>Change</span>
+
+                                            </td><td class="week-col">
+
+                                              <span>Week Ago</span>
+
+                                            </td><td class="month-col">
+
+                                              <span>Month Ago</span>
+
+                                            </td><td class="year-col">
+
+                                              <span>Year Ago</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="spot-price-row">
+                                          <tr>
+                                            <td class="today-col">
+
+                                             <span mc:edit="spot_paladium_today">--</span>
+
+                                            </td><td class="change-col">
+
+                                              <span mc:edit="spot_paladium_change">--</span>
+
+                                            </td><td class="week-col">
+
+                                             <span mc:edit="spot_paladium_week">--</span>
+
+                                            </td><td class="month-col">
+
+                                             <span mc:edit="spot_paladium_mont">--</span>
+
+                                            </td><td class="year-col">
+
+                                             <span mc:edit="spot_paladium_year">--</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Gold/Silver Ratio -->
+                      <table class="row">
+                        <tr>
+                          <td class="wrapper last">
+
+                            <table class="twelve columns">
+                              <tr>
+                                <td>
+
+                                  <h3 class="spot-price-heading">Gold/Silver Ratio</h3>
+
+                                  <table class="spot-price-row-wrapper">
+                                    <tr>
+                                      <td>
+
+                                        <table class="spot-price-row gs-ratio">
+                                          <tr>
+                                            <td class="today-col">
+
+                                            <span mc:edit="spot_gsr">--</span>
+
+                                            </td>
+                                          </tr>
+                                        </table>
+
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                                <td class="expander"></td>
+                              </tr>
+                            </table>
+
+                          </td>
+                        </tr>
+                      </table>
+
+                      <br>
 
                       <!-- Mobile App -->
                       <table class="row mobile-app">
@@ -1413,9 +1959,9 @@
                       <!-- Other Links -->
                       <table class="row">
                         <tr>
-                          <td class="wrapper">
+                          <td class="wrapper last">
 
-                            <table class="seven columns">
+                            <table class="twelve columns">
                               <tr>
                                 <td class="section-heading tan">
 
@@ -1432,55 +1978,34 @@
                                       <td class="popular-links">
 
                                         <table>
-                                          <tr><td><a href="http://www.cmi-gold-silver.com/specials-gold/" title="">Gold Specials</a></td></tr>
                                           <tr><td><a href="http://www.cmi-gold-silver.com/buy-gold-bullion-coins/" title="">Gold Investing<br>Information</a></td></tr>
                                           <tr><td><a href="http://www.cmi-gold-silver.com/buy-gold-bullion-bars/" title="">Gold Bullion Bars</a></td></tr>
                                           <tr><td><a href="http://www.cmi-gold-silver.com/gold-coins/" title="">Gold Bullion Coins</a></td></tr>
-                                          <tr><td><a href="http://www.cmi-gold-silver.com/american-eagles-gold-coins/" title="">American Gold Eagle<br>Coins</a></td></tr>
                                         </table>
 
                                         </td><td class="popular-links">
 
                                         <table>
-                                          <tr><td><a href="http://www.cmi-gold-silver.com/specials-silver/" title="">Silver Specials</a></td></tr>
                                           <tr><td><a href="http://www.cmi-gold-silver.com/buy-silver-bullion-coins/" title="">Silver Investing<br>Information</a></td></tr>
                                           <tr><td><a href="http://www.cmi-gold-silver.com/silver-bullion-bars/" title="">Silver Bullion Bars</a></td></tr>
                                           <tr><td><a href="http://www.cmi-gold-silver.com/american-silver-eagles/" title="">American Silver Eagles</a></td></tr>
-                                          <tr><td><a href="http://www.cmi-gold-silver.com/90circulated/" title="">Junk Silver Coins</a></td></tr>
+                                        </table>
+
+                                      </td><td class="popular-links">
+
+                                        <table>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/buy-silver-bullion-coins/" title="">Silver Investing<br>Information</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/silver-bullion-bars/" title="">Silver Bullion Bars</a></td></tr>
+                                          <tr><td><a href="http://www.cmi-gold-silver.com/american-silver-eagles/" title="">American Silver Eagles</a></td></tr>
                                         </table>
 
                                       </td>
+
                                     </tr>
                                   </table>
 
                                 </td>
                                 <td class="expand"></td>
-                              </tr>
-                            </table>
-
-                          </td>
-                          <td class="wrapper last">
-
-                            <table class="five columns">
-                              <tr>
-                                <td class="section-heading tan">
-
-                                  <h2 class="section-heading tan">Latest Blog Posts</h2>
-
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-
-                                  <br>
-                                  <table class="recent-posts">
-                                    <tr mc:repeatable>
-                                      <td mc:edit="recent_blog_post"><a href="" title="">Blog Post</a></td>
-                                    </tr>
-                                  </table>
-
-                                </td>
-                                <td class="expander"></td>
                               </tr>
                             </table>
 
@@ -1515,7 +2040,7 @@
                                 <td>
 
                                   <h3>BUY  -  SELL  -  TRADE</h3>
-                                  <p>CMI Gold &amp; Silver Inc. buys, sells and trades all the popular forms of gold and silver. Our sell prices are among the lowest of all established dealers. Our buy prices are nearly always the highest. Specials pricing for trades. Call us. Friendliest service on the internet.</p>
+                                  <p>OnlyGold buys, sells and trades all the popular forms of gold and silver. Our sell prices are among the lowest of all established dealers. Our buy prices are nearly always the highest. Specials pricing for trades. Call us. Friendliest service on the internet.</p>
 
                                 </td>
                                 <td class="expander"></td>
@@ -1531,8 +2056,9 @@
                                   <center>
 
                                   <p>Call Us Toll Free</p>
-                                  <h3>800.528.1380</h3>
-                                  <p>7am - 5pm MST</p>
+                                  <h3>800.800.4485</h3>
+                                  <p>M-Th: 7am - 5pm MST</p>
+                                  <p>F: 7am - 3pm MST</p>
                                   <br>
                                   <a href="http://www.bbb.org/central-northern-western-arizona/business-reviews/gold-silver-and-platinum-dealers/cmi-gold-silver-inc-in-phoenix-az-4606/" title="A+ from BBB"><img src="http://www.cmi-gold-silver.com/email/respo/bbb.png" alt="A+ from BBB" class="center"></a>
                                   <br>
@@ -1561,57 +2087,14 @@
 
                 <table class="row">
                   <tr>
-                    <td class="wrapper">
+                    <td class="wrapper last">
 
-                      <table class="eight columns">
+                      <table class="twelve columns">
                         <tr>
                           <td class="copyright">
 
-                            Copyright *|DATE:Y|*, CMI Gold &amp; Silver Inc.
+                            Copyright MMXV, CMI Gold &amp; Silver Inc.
 
-                          </td>
-                          <td class="expander"></td>
-                        </tr>
-                      </table>
-
-                    </td><td class="wrapper last">
-
-                      <table class="four columns">
-                        <tr>
-                          <td class="center">
-                            <center>
-
-                            <table class="social-links-wrapper">
-                              <tr>
-                                <td class="social-link">
-
-                                  <a href="http://www.facebook.com/cmigoldsilver" title="facebook" class="center">
-                                    <img src="http://www.cmi-gold-silver.com/email/respo/fb.png" alt="facebook" class="center">
-                                  </a>
-
-                                </td><td class="social-link">
-
-                                  <a href="http://www.twitter.com/cmigoldsilver" title="twitter" class="center">
-                                    <img src="http://www.cmi-gold-silver.com/email/respo/tw.png" alt="twitter" class="center">
-                                  </a>
-
-                                </td><!-- <td class="social-link">
-
-                                  <a href="" title="" class="center">
-                                    <img src="http://www.cmi-gold-silver.com/email/respo/in.png" alt="linkedin">
-                                  </a>
-
-                                </td> --><td class="social-link">
-
-                                  <a href="https://plus.google.com/115588792106364253435/about" title="" class="center">
-                                    <img src="http://www.cmi-gold-silver.com/email/respo/gp.png" alt="google+" class="center">
-                                  </a>
-
-                                </td>
-                              </tr>
-                            </table>
-
-                            </center>
                           </td>
                           <td class="expander"></td>
                         </tr>
